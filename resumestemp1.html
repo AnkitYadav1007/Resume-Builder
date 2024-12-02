@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box;
+         }
+         body{
+            width: 100%;
+            height: 100%;
+         }
+        .main
+        {
+            width: 100%;
+            height: 1100px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .left
+        {
+            width: 48%;
+            height: 98%;
+            border: 2px solid black;
+            margin-top: 10px;
+            background-color: #efefef;
+        }
+        .right
+        {
+            width: 49%;
+            height: 98%;
+            border: 2px solid black;
+            margin-top: 10px;
+            background-color: #efefef;
+            z-index: 4;
+        }
+        .form
+        {
+            width: 700px;
+            height: 900px;
+            border: 2px solid rgb(255, 0, 0);
+            margin-left: 25px;
+            margin-top: 20px;
+            /* margin-right: 50px; */
+            display: flex;
+            z-index: 10;
+        }
+        #down
+        {
+            position: absolute;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            width: 240px;
+            height: 50px;
+            text-align: center;
+            top: 136%;
+            left: 260px;
+            background-color: yellow;
+            color: black;
+            border: none;
+            box-shadow: 0 0 5 rgb(194, 13, 13),0 0 15 rgb(252, 93, 8),0 0 25 rgb(237, 26, 26),0 0 100 rgb(220, 17, 17);
+            cursor: pointer;
+            border-radius: 2px;
+            filter: drop-shadow(0px 0px 2px rgb(255, 255, 255));
+            transition: all ease .5s;
+            border-radius: 9px;
+        }
+        #down:hover{
+            background-color: rgb(255, 227, 46);
+            border: 1px solid gray;
+            outline: 1px solid black;
+            transform: translateY(-10px);
+            border-radius: 9px;
+        }
+        .left1
+        {
+            width: 44%;
+            height: 100%;
+            /* border: 1px solid black; */
+            background-color: #fff;
+            padding: 10px;
+        }
+        .right1{
+            width: 56%;
+            height: 100%;
+            /* border: 1px solid rgb(189, 69, 69); */
+            background-color: #e3f7fe;  
+            padding: 10px;
+        }
+        .img
+        {
+            width: 180px;
+            height: 180px;
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            margin-left: 50px;
+            background-image: url(image/user.png);
+            background-size: cover;
+            background-position: -30px;
+        }
+        .con
+        {
+            margin-top: -10px;
+            font-size: 20px;
+        }
+        .c1
+        {
+            margin-top: -20px;
+            font-size: 13px;
+            margin-left: 0px;
+        }
+        .c2
+        {
+            font-size: 13px;
+            margin-left: 0px;
+            font-family: sans-serif;
+        }
+        data{
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+        .c3
+        {
+            font-size: 13px;
+            margin-left: 0px;
+            font-family: sans-serif;
+        }
+        .carr
+        {
+            font-size: 20px;
+        }
+        .ca1
+        {
+            width: 220px;
+            height: 130px;
+            /* border: 1px solid black; */
+            font-family: sans-serif;
+            font-size: 13px;
+            margin-left: 20px;
+            font-weight: 100;
+            /* position: ; */
+            font-weight: 600;
+        }
+        .lan
+        {
+            font-size: 20px;
+        }
+        .l1,.l2,.l3
+        {
+            margin-left: 20px;
+            margin-top: 10px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            position: absolute;
+        }
+        .skill
+        {
+            font-size: 20px;
+        }
+        .sk1,.sk2,.sk3,.sk4
+        {
+            margin-left: 20px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            /* position: absolute; */
+        }
+        .int
+        {
+            font-size: 20px;
+        }
+        .in1,.in2,.in3,.in4
+        {
+            margin-left: 20px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .name
+        {
+            font-size: 28px;
+            font-weight: 600;
+            margin-left: 40px;
+            margin-top: 20px;
+            position: absolute;
+        }
+        /* .prof
+        {
+            font-size: 24px;
+            font-weight: 600;
+            margin-left: 20px;
+            padding-top: 40px;
+        } */
+        .edu
+        {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-left: 10px;
+            width: 350px;
+            font-family: sans-serif;
+            height: 50px;
+            background-color: #fff;
+            padding-top: 12px;
+            padding-left: 14px;
+        }
+        .inter
+        {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 16px;
+            margin-left: 50px;
+        }
+        .ll1,.gd1
+        {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 7px;
+
+        }
+        .college
+        {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 16px;
+            margin-left: 50px;
+            
+        }
+        .job
+        {
+            font-size: 24px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 36px;
+            margin-left: 10px;
+            width: 350px;
+            height: 50px;
+            padding-top: 12px;
+            padding-left: 14px;
+            background-color: #fff;
+        }
+        .tr1{
+            margin-left: 47px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 7px;
+
+        }
+        .ach
+        {
+            font-size: 24px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 46px;
+            margin-left: 10px;
+            width: 350px;
+            height: 50px;
+            padding-top: 12px;
+            padding-left: 14px;
+            background-color: #fff;
+        }
+        .acc1
+        {
+            margin-left: 47px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="right">
+            <form action="download" id="ff1">
+        
+                <div class="form">
+                    <div class="left1">
+                        <div class="img"></div>
+                        <h2 class="con">
+                            <ul><li>CONTACT</li>
+                            <span class="c1">&emsp;&emsp13;<data>8052531664</data></span><br>
+                            <span class="c2">&emsp;&emsp13;<data>Ankityadav6649@gmail.com</data></span><br>
+                            <span class="c3">&emsp;&emsp13;<data>Naini,Prayagraj</data></span>
+                            
+                        </h2>
+                        <h2 class="carr">
+                            <ul><li>CAREER OBJECTIVE</li>
+                            <p class="ca1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis officia sunt, quibusdam adipisci reprehenderit vel temporibus, autem omnis atque error aliquid modi necessitatibus aspernatur voluptas! Impedit quaerat et alias modi.</p>
+                        </h2>
+                        <h2 class="lan">
+                            <ul><li>LANGUAGE</li>
+                            <span class="l1">1.English</span><br>
+                            <span class="l2">2.Hindi</span><br>
+                            <span class="l3">3.France</span><br>  
+                        </h2>
+                        <h2 class="skill">
+                            <ul><li>SKILL</li>
+                            <span class="sk1">1.Team work</span><br>
+                            <span class="sk2">2.Open minded</span><br>
+                            <span class="sk3">3.Coding</span><br>
+                            <span class="sk4">4.Video edition</span><br>
+                        </h2>
+                        <h2 class="int">
+                            <ul><li>INTEREST</li>
+                            <span class="in1">1.Meditation</span><br>
+                            <span class="in2">2.Playing cricket</span><br>
+                            <span class="in3">3.Visiting</span><br>
+                            <span class="in4">4.Reading books</span><br>
+                        </h2>
+                    </div>
+                    <div class="right1">
+                        <span class="name">Bhavesh Singh</span><br>
+                        <!-- <span class="prof">Student</span> -->
+                        <div class="edu">
+                            EDUCATION
+                        </div>
+                        <div class="inter">
+                            HIGH SCHOOL DETAILS
+                            <ul>
+                                <li class="ll1">Science streme</li>
+                                <li class="ll1">SVP college 2019</li>
+                                <li class="ll1">3rd position in school</li>
+                                <li class="ll1">Class cordinator</li>
+                            </ul>
+                        </div>
+                        <div class="college">
+                            COLLEGE DETAILS
+                            <ul>
+                                <li class="gd1">Bachelor of Computer Applications</li>
+                                <li class="gd1">United instuate of management</li>
+                                <li class="gd1">Captain of web development</li>
+                                <li class="gd1">Winner of inter club compatation</li>
+                            </ul>
+                        </div>
+                        <div class="job">
+                            INTERNSHIP AND TRANING
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="tr1">Internship & Job Preparation by Internshala</li>
+                                <li class="tr1">Complete netcamp summer internship </li>
+                                <li class="tr1">Club Captain of Web Development</li>
+                                <li class="tr1">Winner of inter club compatation</li>
+                            </ul>
+                        </div>
+                        <div class="ach">
+                            ACHIEVEMENTS
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="acc1">Get third rank in 10th in our school</li>
+                                <li class="acc1">Get 5th rank in 12th in our school</li>
+                                <li class="acc1">Winner of Inter club compatition in college</li>
+                                <li class="acc1">top performer of certification course in our college</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div></form>
+                <button id="down" onclick="downloadPDF()">Download</button>
+        </div>
+        <div class="left">
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/v4-shims.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+        var docPDF = new jsPDF();
+        function downloadPDF(invoiceNo){
+
+            var elementHTML = document.getElementById("ff1");
+            
+            docPDF.html(elementHTML, {
+            callback: function(docPDF) {
+            docPDF.save(invoiceNo+'.pdf');
+            },
+            x: 0,
+            y: 0,
+            width: 170,
+            windowWidth: 650
+        });
+    }
+</script>
+
+<!-- 
+<div class="img"></div>
+<h2 class="con">
+    <ul><li>CONTACT</li></ul>
+    <span class="c1">&emsp;<i class="fa-solid fa-phone" style="color: rgb(0, 255, 68);"></i>&emsp13;8102458163</span><br>
+    <span class="c2">&emsp;<i class="fa-solid fa-envelope">&emsp13;<data>Abhay123@gmail.com</data></i></span><br>
+    <span class="c3">&emsp;<i class="fa-solid fa-location-dot">&emsp13;<data>Prayagraj,Rajapur</data></i></span>
+</h2>
+<h2 class="carr">
+    <ul><li>CAREER OBJECTIVE</li></ul>
+    <p class="ca1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis officia sunt, quibusdam adipisci reprehenderit vel temporibus, autem omnis atque error aliquid modi necessitatibus aspernatur voluptas! Impedit quaerat et alias modi.</p>
+</h2>
+<h2 class="lan">
+    <ul><li>LANGUAGE</li></ul>
+    <span class="l1">1.English</span><br>
+    <span class="l2">2.Hindi</span><br>
+    <span class="l3">3.France</span><br>  
+</h2>
+<h2 class="skill">
+    <ul><li>SKILL</li></ul>
+    <span class="sk1">1.Team work</span><br>
+    <span class="sk2">2.Open minded</span><br>
+    <span class="sk3">3.Coding</span><br>
+    <span class="sk4">4.Video edition</span><br>
+</h2>
+<h2 class="int">
+    <ul><li>INTEREST</li></ul>
+    <span class="in1">1.Meditation</span><br>
+    <span class="in2">2.Playing cricket</span><br>
+    <span class="in3">3.Visiting</span><br>
+    <span class="in4">4.Reading books</span><br>
+</h2> -->
+</body>
+</html>

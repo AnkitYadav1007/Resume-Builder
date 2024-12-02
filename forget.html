@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeCraftHub :Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="image/acd.png">
+    <style>
+        .main img
+        {
+            width: 100%;
+            height: 100%;
+            filter: blur(10px);
+        }
+        .main1{
+            width: 400px;
+            height: 600px;
+            border: 2px solid black;
+            position: absolute;
+            top: 10%;
+            left: 35%;
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 255);
+            border-color: aliceblue;
+        }
+        .mail
+        {
+            width: 200px;   
+            height: 40px;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            padding-left: 45px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            border:2px solid rgb(0, 0, 0);
+            color:black;
+        }
+        .pas
+        {
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            top: 33%;
+            left: 20%;
+            padding-left: 45px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            /* border:2px solid rgb(0, 0, 0); */
+            color:rgb(0, 0, 0);
+        }
+        .sub
+        {
+            width: 80px;
+            height: 60px;
+            position: absolute;
+            top: 57%;
+            left: 40%;
+            padding-left: 10px;
+            border-radius: 3px;
+            background: transparent;
+            font-size:17px;
+            transition: all ease .5s;
+            border-color: aliceblue;
+            background-color: red;
+            color: rgb(255, 255, 255);
+        }
+        #a1
+        {
+            position: absolute;
+            top: 22.3%;
+            left: 22%;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+        #a2
+        {
+            position: absolute;
+            top: 35.3%;
+            left: 22%;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+        .sub:hover{
+            /* filter: drop-shadow(0px 0px 2px red); */
+            box-shadow: 1px 1px 4px red;
+            
+            background-color: blue;
+            color: white;
+        }
+        #sp{
+            position: absolute;
+            top: 68%;
+            left: 41%;
+        }
+        .l11
+        {
+            position: absolute;
+            top: 35%;
+            left: 25%;
+
+        }
+        .l12
+        {
+            position: absolute;
+            top: 35%;
+            left: 20%;
+        }
+        @media screen and (min-width: 300px) and (max-width:500px)
+        {
+           
+            .main1{
+            width: 440px;
+            height: 600px;
+            border: 2px solid black;
+            position: absolute;
+            top: 20%;
+            left: 0%;
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 255);
+            border-color: aliceblue;
+        } 
+    }
+    .label1 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 33%;
+        top: 22%;
+        transition: 0.2s;
+    }
+    input:valid ~ .label1 {
+        top: 19%;
+        left: 32%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 1;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="image/Screenshot 2024-01-09 164953.png" alt="">
+        <div class="main1">
+            <form>
+                <i class="fa-solid fa-envelope" id="a1"></i>
+                <!-- <i class="fa-solid fa-key" id="a2"></i> -->
+                <!-- <input type="text" placeholder="Enter your email" class="mail" id="login-email" required><br> -->
+                <div class="text-field">
+                    <input type="text" class="mail" id="login-email" required>
+                    <label class="label1">Enter email</label>
+                </div><br>
+                <input type="checkbox" name="" class="l12"><span class="l11" required> I have accept all the terms and conditions</span>
+                <button class="sub" id="res_submit" name="res_submit" value="submit">Get Link</button>
+                <br>
+                <span id="sp">Click here <br><a href="login.html">To login</a> </span>
+                
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,sendPasswordResetEmail  } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+    
+    const firebaseConfig = {
+    apiKey: "AIzaSyA0nXMddnrfVTFw1l9gKz09tWvXHx8KKZ4",
+    authDomain: "college-project-6bdca.firebaseapp.com",
+    databaseURL: "https://college-project-6bdca-default-rtdb.firebaseio.com",
+    projectId: "college-project-6bdca",
+    storageBucket: "college-project-6bdca.appspot.com",
+    messagingSenderId: "70570382515",
+    appId: "1:70570382515:web:556f6f74c39ae21badccc6",
+    measurementId: "G-Q273H5DY45"
+  };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    
+
+
+    res_submit.addEventListener('click', (e)=>{
+        var mail = document.getElementById('login-email').value;
+        // var pasword = document.getElementById('login-password').value;
+    sendPasswordResetEmail(auth, mail)
+  .then(() => {
+    alert("Reset link sent in your registered email " +mail);
+    console.log(mail)
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+  })
+   document.getElementById('login-email').value='';
+
+  })
+        
+
+        
+        
+  </script>
+</body>
+</html>

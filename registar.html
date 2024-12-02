@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeCraftHub :Registar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="image/acd.png">
+    <style>
+        .main img
+        {
+            width: 100%;
+            height: 100%;
+            filter: blur(10px);
+        }
+        .main1{
+            width: 400px;
+            height: 600px;
+            border: 2px solid black;
+            position: absolute;
+            top: 10%;
+            left: 35%;
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 255);
+            border-color: aliceblue;
+        }
+        .name
+        {
+            width: 200px;   
+            height: 40px;
+            position: absolute;
+            top: 18%;
+            left: 20%;
+            padding-left: 45px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            border:2px solid rgb(0, 0, 0);
+            color:black;
+        }
+        .mail
+        {
+            width: 200px;   
+            height: 40px;
+            position: absolute;
+            top: 30%;
+            left: 20%;
+            padding-left: 45px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            border:2px solid rgb(0, 0, 0);
+            color:black;
+        }
+        .pas
+        {
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            top: 54%;
+            left: 20%;
+            padding-left: 45px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            /* border:2px solid rgb(0, 0, 0); */
+            color:rgb(0, 0, 0);
+        }
+        .pas2
+        {
+            
+            width: 200px;
+            height: 40px;
+            position: absolute;
+            top: 42%;
+            left: 20%;
+            padding-left: 45px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            /* border:2px solid rgb(0, 0, 0); */
+            color:rgb(0, 0, 0);
+        }
+        .sub
+        {
+            width: 80px;
+            height: 40px;
+            position: absolute;
+            top: 74%;
+            left: 40%;
+            padding-left: 10px;
+            border-radius: 3px;
+            background: transparent;
+            font-size:17px;
+            transition: all ease .5s;
+            border-color: aliceblue;
+            background-color: red;
+            color: rgb(255, 255, 255);
+        }
+        #a1
+        {
+            position: absolute;
+            top: 32.3%;
+            left: 22%;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+        #a2
+        {
+            position: absolute;
+            top: 56.3%;
+            left: 22%;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+        #b2
+        {
+            position: absolute;
+            top: 44.3%;
+            left: 22%;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+        #b1
+        {
+            position: absolute;
+            top: 19.9%;
+            left: 22%;
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+        .sub:hover{
+            /* filter: drop-shadow(0px 0px 2px red); */
+            box-shadow: 1px 1px 4px red;
+            
+            background-color: blue;
+            color: white;
+        }
+        #sp{
+            position: absolute;
+            top: 84%;
+            left: 38%;
+        }
+        .l11
+        {
+            position: absolute;
+            top: 65%;
+            left: 25%;
+
+        }
+        .l12
+        {
+            position: absolute;
+            top: 65%;
+            left: 20%;
+        }
+        @media screen and (min-width: 300px) and (max-width:500px)
+        {
+            .main1{
+            width: 427px;
+            height: 600px;
+            border: 2px solid black;
+            position: absolute;
+            top: 10%;
+            left: 0%;
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            background-color: rgba(255, 255, 255, 255);
+            border-color: aliceblue;
+        } 
+        }
+        #sp1{
+            position: absolute;
+            top: 93%;
+            left: 31%;
+        }
+        .label1 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 33%;
+        top: 20%;
+        transition: 0.2s;
+    }
+    .label2 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 33%;
+        top: 32%;
+        transition: 0.2s;
+    }
+    .label3 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 33%;
+        top: 44%;
+        transition: 0.2s;
+    }
+    .label4 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 33%;
+        top: 56%;
+        transition: 0.2s;
+    }
+
+    input:valid ~ .label1 {
+        top: 17%;
+        left: 32%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 1;
+    }
+    input:valid ~ .label2 {
+        top: 29%;
+        left: 32%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 1;
+    }
+    input:valid ~ .label3 {
+        top: 41%;
+        left: 32%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 1;
+    }
+    input:valid ~ .label4 {
+        top: 53%;
+        left: 32%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 1;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="image/Screenshot 2024-01-09 164953.png" alt="">
+        <div class="main1">
+            <form>
+                <i class="fa-solid fa-envelope" id="a1"></i>
+                <i class="fa-solid fa-key" id="a2"></i>
+                <i class="fa-solid fa-key" id="b2"></i>
+                <i class="fa-solid fa-user" id="b1"></i>
+                <div class="text-field">
+                    <input type="text" class="name"  id="signup-name" required>
+                    <label class="label1">Enter name</label>
+                </div><br>
+                <div class="text-field">
+                    <input type="text" class="mail" id="signup-email" required>
+                    <label class="label2">Enter email</label>
+                </div><br>
+                <div class="text-field">
+                    <input type="password" class="pas2" id="signup-password" required>
+                    <label class="label3">Enter password</label>
+                </div><br>
+                <div class="text-field">
+                    <input type="password" class="pas"  id="signup-password1" required>
+                    <label class="label4">Enter password</label>
+                </div><br>
+                <input type="checkbox" name="" class="l12" required><span class="l11"> I have accept all the terms and conditions</span>
+                
+                <br>
+                <span id="sp">Already a user ? <br> &emsp;<a href="login.html">Click Hear</a> </span>
+                
+                <button class="sub"type="submit" name="submit_form" id="submit_form">Submit</button>
+                <span id="sp1">forgot password <a href="forget.html">Click Hear</a> </span>
+
+            </form>
+            
+        </div>
+    </div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+    
+    const firebaseConfig = {
+        apiKey: "AIzaSyBoE6rMOLiMSiXFQiBgRUYJJhUjGBtMGQ0",
+        authDomain: "minor-project-297f9.firebaseapp.com",
+        projectId: "minor-project-297f9",
+        storageBucket: "minor-project-297f9.appspot.com",
+        messagingSenderId: "40442721433",
+        appId: "1:40442721433:web:d2063447e24c56202ef408",
+        measurementId: "G-3C6QERM338"
+      };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    submit_form.addEventListener('click', (e)=>{
+  
+  
+      var name = document.getElementById('signup-name').value;
+      var email = document.getElementById('signup-email').value;
+      var password = document.getElementById('signup-password').value;
+      var password1 = document.getElementById('signup-password1').value;
+      if(password!=password1)
+      {
+        alert("plese enter same passworrd")
+      }
+      createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+        const user = userCredential.user;
+        // welcome
+        set(ref(database, 'users/' + user.uid), {
+            name : name,
+            email : email,
+            password : password ,
+            password1 : password1,
+        })
+    })
+            .then(() => {
+            alert('Account Created Successfully');
+            console.log("Success");
+            location.replace("home.html")
+        })
+
+   
+        .catch((error) => {
+          alert("Enter valid email and password");
+        })
+
+
+       document.getElementById('signup-name').value='';
+       document.getElementById('signup-email').value='';
+       document.getElementById('signup-password').value='';
+       document.getElementById('signup-password1').value='';
+       window.location("home.html");
+    })
+       
+    //    location.replace("home.html")
+
+    //    document.getElementById('phone').value='';
+    //    document.getElementById('college_name').value='';
+       //document.querySelector('input[name="gender"]:checked')=false;
+        // let radio = document.getElementById("gender");
+        // radio.checked = false;
+      
+
+// })
+
+    // submit_log.addEventListener('click', (e)=>{
+    //     var mail = document.getElementById('login-email').value;
+    //     var pasword = document.getElementById('login-password').value;
+    //     //var name =  document.getElementById('login-name').value;
+
+    //     signInWithEmailAndPassword(auth, mail, pasword)
+    //     .then((userCredential) => {
+    //     // Signed in 
+    //     const user = userCredential.user;
+    //     // ...
+    //     const ld = new Date();
+    //     update(ref(database, 'users/' + user.uid), {
+    //         last_login : ld,
+    //     })
+    //     document.getElementById('abhi').innerHTML =" Welcome In PG Life ";
+    //         alert('login successfully welcome')
+    //     })
+    //     .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     alert('Plese Enter valid email or password');
+    //     });
+    //     document.getElementById('login-email').value='';  
+    //     document.getElementById('login-password').value='';
+    //   })
+    //     .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     alert('Plese Enter valid email or password');
+    //     })
+        
+
+        
+        
+  </script>
+  <!-- <script>
+    function mn1()
+        {
+            window.location="index2.html";
+            alert('Logout Successfully')
+        }
+  </script> -->
+  
+    <script>
+        
+        // document.getElementById("z1").innerHTML += localStorage.getItem("p1")
+        // document.getElementById("z2").innerHTML += localStorage.getItem("p2")
+        // document.getElementById("z3").innerHTML += localStorage.getItem("p3")
+        // document.getElementById("z4").innerHTML += localStorage.getItem("p4")
+        // document.getElementById("z5").innerHTML += localStorage.getItem("p5")
+        // document.getElementById("zn1").innerHTML+= localStorage.getItem("p1")
+
+
+    // const m1 = document.getElementById("z1").innerHTML = "Name : " +localStorage.d1;
+    // const m2 = document.getElementById("z2").innerHTML = "Email-id : "+localStorage.d2;
+    // const m3 = document.getElementById("z3").innerHTML = "Phone-no : "+localStorage.d3;
+    // const m4 = document.getElementById("z4").innerHTML = "College-name : "+localStorage.d4;
+    // const m5 = document.getElementById("z5").innerHTML = "Genfer : "+localStorage.d5;
+// 
+
+        // const m1 = document.getElementById("l1").contentWindow.document.getElementById('z1');
+        // const m2 = document.getElementById("z2")
+        // const m3 = document.getElementById("z3")
+        // const m4 = document.getElementById("z4")
+        // const m5 = document.getElementById("z5")
+    //     var name = document.getElementById('signup-name').value;
+    //   var email = document.getElementById('signup-email').value;
+    //   var password = document.getElementById('signup-password').value;
+    //   var phone = document.getElementById('phone').value;
+    //   var college_name = document.getElementById('college_name').value;
+    //   var gender = document.querySelector('input[name="gender"]:checked').value;
+
+    //   const m1 = document.getElementById("z1").innerHTML=+name;
+    // const m2 = document.getElementById("z2").innerHTML=+email
+    // const m3 = document.getElementById("z3").innerHTML=+phone
+    // const m4 = document.getElementById("z4").innerHTML=+college_name
+    // const m5 = document.getElementById("z5").innerHTML=+gender
+  </script>
+  </body>
+</html>

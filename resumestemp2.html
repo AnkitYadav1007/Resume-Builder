@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box;
+         }
+         body{
+            width: 99%;
+            height: 100%;
+         }
+        .main
+        {
+            width: 100%;
+            height: 1100px;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #ffffff;
+        }
+        .left
+        {
+            width: 48%;
+            height: 98%;
+            border: 2px solid black;
+            margin-top: 10px;
+            background-color: #ffffff;
+            border: 2px solid black;
+            padding-left: 20px;
+        }
+        .right
+        {
+            width: 49%;
+            height: 98%;
+            border: 2px solid black;
+            margin-top: 10px;
+            background-color: #ffffff;
+            z-index: 4;
+        }
+        .form
+        {
+            width: 700px;
+            height: 900px;
+            border: 2px solid rgb(255, 0, 0);
+            margin-left: 25px;
+            margin-top: 20px;
+            /* margin-right: 50px; */
+            display: flex;
+            z-index: 10;
+        }
+        #down
+        {
+            position: absolute;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            width: 240px;
+            height: 50px;
+            text-align: center;
+            top: 126%;
+            left: 260px;
+            background-color: yellow;
+            color: black;
+            border: none;
+            box-shadow: 0 0 5 rgb(194, 13, 13),0 0 15 rgb(252, 93, 8),0 0 25 rgb(237, 26, 26),0 0 100 rgb(220, 17, 17);
+            cursor: pointer;
+            border-radius: 2px;
+            filter: drop-shadow(0px 0px 2px rgb(255, 255, 255));
+            transition: all ease .5s;
+            border-radius: 9px;
+        }
+        #down:hover{
+            background-color: rgb(255, 227, 46);
+            border: 1px solid gray;
+            outline: 1px solid black;
+            transform: translateY(-10px);
+            border-radius: 9px;
+        }
+        .left1
+        {
+            width: 44%;
+            height: 100%;
+            /* border: 1px solid black; */
+            background-color: #fff;
+            padding: 10px;
+        }
+        .right1{
+            width: 56%;
+            height: 100%;
+            /* border: 1px solid rgb(189, 69, 69); */
+            background-color: #e3f7fe;  
+            padding: 10px;
+        }
+        .img
+        {
+            width: 180px;
+            height: 180px;
+            /* border: 2px solid black; */
+            border-radius: 50%;
+            margin-left: 50px;
+            background-image: url(image/user.png);
+            background-size: cover;
+            background-position: -30px;
+        }
+        .con
+        {
+            margin-top: -10px;
+            font-size: 20px;
+            height: 95px;
+        }
+        .c1
+        {
+            margin-top: -20px;
+            font-size: 13px;
+            margin-left: 0px;
+        }
+        .c2
+        {
+            font-size: 13px;
+            margin-left: 0px;
+            font-family: sans-serif;
+        }
+        data{
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+        .c3
+        {
+            font-size: 13px;
+            margin-left: 0px;
+            font-family: sans-serif;
+        }
+        .carr
+        {
+            font-size: 20px;
+        }
+        .ca1
+        {
+            width: 220px;
+            height: 130px;
+            /* border: 1px solid black; */
+            font-family: sans-serif;
+            font-size: 13px;
+            margin-left: 20px;
+            font-weight: 100;
+            /* position: ; */
+            font-weight: 600;
+        }
+        .lan
+        {
+            font-size: 20px;
+        }
+        .l1,.l2,.l3
+        {
+            margin-left: 20px;
+            margin-top: 10px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            position: absolute;
+        }
+        .skill
+        {
+            font-size: 20px;
+        }
+        .sk1,.sk2,.sk3,.sk4
+        {
+            margin-left: 20px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            /* position: absolute; */
+        }
+        .int
+        {
+            font-size: 20px;
+        }
+        .in1,.in2,.in3,.in4
+        {
+            margin-left: 20px;
+            font-family: sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .name
+        {
+            font-size: 28px;
+            font-weight: 600;
+            margin-left: 40px;
+            margin-top: 20px;
+            position: absolute;
+        }
+        /* .prof
+        {
+            font-size: 24px;
+            font-weight: 600;
+            margin-left: 20px;
+            padding-top: 40px;
+        } */
+        .edu
+        {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-left: 10px;
+            width: 350px;
+            font-family: sans-serif;
+            height: 50px;
+            background-color: #fff;
+            padding-top: 12px;
+            padding-left: 14px;
+        }
+        .inter
+        {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 16px;
+            margin-left: 50px;
+        }
+        .ll1,.gd1
+        {
+            font-size: 14px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 7px;
+
+        }
+        .college
+        {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 16px;
+            margin-left: 50px;
+            
+        }
+        .job
+        {
+            font-size: 24px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 36px;
+            margin-left: 10px;
+            width: 350px;
+            height: 50px;
+            padding-top: 12px;
+            padding-left: 14px;
+            background-color: #fff;
+        }
+        .tr1{
+            margin-left: 47px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 7px;
+
+        }
+        .ach
+        {
+            font-size: 24px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 46px;
+            margin-left: 10px;
+            width: 350px;
+            height: 50px;
+            padding-top: 12px;
+            padding-left: 14px;
+            background-color: #fff;
+        }
+        .acc1
+        {
+            margin-left: 47px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: sans-serif;
+            margin-top: 7px;
+        }
+        .savea1
+        {
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+            position: absolute;
+            top: 20%;
+            left: 80%;
+            cursor: pointer;
+            border: none;
+            background-color: #2a66ff;
+            color: white;
+            border-radius: 5px;
+        }
+        .savea2
+        {
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+            position: absolute;
+            top: 20%;
+            left: 63%;
+            cursor: pointer;
+            border: none;
+            background-color: #2a66ff;
+            color: white;
+            border-radius: 5px;
+        }
+        .label1 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 56%;
+        top: 13.2%;
+        transition: 0.2s;
+    }
+    .label3 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 72%;
+        top: 13.2%;
+        transition: 0.2s;
+    }
+    .label4 {
+        color: #000000;
+        position: absolute;
+        pointer-events: none;
+        left: 88%;
+        top: 13.2%;
+        transition: 0.2s;
+    }
+    input:valid ~ .label1 {
+        top: 11%;
+        left: 55%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 10;
+    }
+    input:valid ~ .label3 {
+        top: 11%;
+        left: 71%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 10;
+    }
+    input:valid ~ .label4 {
+        top: 11%;
+        left: 87%;
+        font-size: small;
+        color: #000000;
+        background-color:#fff;
+        /* background: transparent; */
+        padding:0 5px 0 5px;
+        z-index: 10;
+    }
+    .det2
+        {
+            width: 200px;   
+            height: 40px;
+            position: absolute;
+            /* top: 18%; */
+            left: 53%;
+            padding-left: 35px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            border:2px solid rgb(0, 0, 0);
+            color:black;
+            /* z-index: 12; */
+        }
+        .det3
+        {
+            width: 200px;   
+            height: 40px;
+            position: absolute;
+            /* top: 18%; */
+            left: 69%;
+            padding-left: 35px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            border:2px solid rgb(0, 0, 0);
+            color:black;
+            /* z-index: 12; */
+        }
+        .det4
+        {
+            width: 200px;   
+            height: 40px;
+            position: absolute;
+            /* top: 18%; */
+            left: 85%;
+            padding-left: 35px;
+            border-radius: 7px;
+            background: transparent;
+            font-size:17px;
+            border:2px solid rgb(0, 0, 0);
+            color:black;
+            /* z-index: 12; */
+        }
+        .con2
+        {
+            font-size: 26px;
+            font-family: sans-serif;
+            /* margin-left: ; */
+        }
+        .savea3
+        {
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+            position: absolute;
+            top: 33%;
+            left: 86%;
+            cursor: pointer;
+            border: none;
+            background-color: #2a66ff;
+            color: white;
+            border-radius: 5px;
+        }
+        .savea4
+        {
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+            position: absolute;
+            top: 41%;
+            left: 86%;
+            cursor: pointer;
+            border: none;
+            background-color: #2a66ff;
+            color: white;
+            border-radius: 5px;
+        }
+        .con3
+        {
+            font-size: 26px;
+            position: absolute;
+            top: 25%;
+            font-family: sans-serif;
+        }
+        .zz
+        {
+            font-size: 26px;
+        }
+        .con4
+        {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            top: 33%;
+        }
+        .deeee
+        {
+            position: absolute;
+            /* top: 0%; */
+            visibility:hidden;
+            font-family: sans-serif;
+        }
+        
+        .ssss1
+        {
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+            margin-left: 110px;
+            margin-top: 30px;
+            /* position: absolute; */
+            /* top: 41%; */
+            /* left: 86%; */
+            cursor: pointer;
+            border: none;
+            background-color: #2a66ff;
+            color: white;
+            border-radius: 5px;
+        }
+        .ssss2
+        {
+            width: 140px;
+            height: 40px;
+            font-size: 16px;
+            margin-left: 90px;
+            /* position: absolute; */
+            /* top: 41%; */
+            /* left: 86%; */
+            cursor: pointer;
+            border: none;
+            background-color: #2a66ff;
+            color: white;
+            border-radius: 5px;
+        }
+        .ll5{
+            width: 160px;
+            height: 40px;
+            border-radius: 6px;
+            border: 1px solid black;
+        }
+        .ll6
+        {
+            width: 160px;
+            height: 40px;
+            border-radius: 6px;
+            margin-left: 20px;
+            border: 1px solid black;   
+        }
+        .ll7
+        {
+            width: 160px;
+            height: 40px;
+            border-radius: 6px;
+            margin-left: 20px;
+            border: 1px solid black;   
+        }
+        .con7{
+            width: 600px;
+            height: 120px;
+            /* border: 1px solid black; */
+            position: absolute;
+            top: 54%;
+        }
+        .con5
+        {
+            position: absolute;
+            top: 47%;
+            font-size: 26px;
+            font-weight: 600;
+        }
+        .con6
+        {
+            position: absolute;
+            top: 46%;
+            left: 68.4%;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        @media screen and (min-width: 300px ) and (max-width: 500px)
+        {
+            .left{
+            position: absolute;
+            width: 168%;
+            left: 5%;
+            height: 98%;
+            /* border: 2px solid black; */
+            margin-top: 1129px;
+            background-color: #ffffff;
+            border: 2px solid black;
+            padding-left: 20px;
+            }
+            .name{
+                width:500px
+            }
+            #down
+            {
+                top:107%;
+                left: 229px;
+            }
+            .det2
+            {
+                left: 6%;
+            }
+            .det3
+            {
+                left: 37%;
+            }
+            .det4{
+                left: 69%;
+            }
+            .label1
+            {
+                left: 14%;
+                top: 9.2%;
+            }
+            .label3{
+                left: 43%;
+                top: 9.2%;
+            }
+            .label4{
+                left: 74%;
+                top: 9.2%;
+            }
+            input:valid ~ .label4 {
+                top: 7.2%;
+                left: 72%;
+            }
+            input:valid ~ .label3 {
+                top: 7.2%;
+                left: 40%;
+            }
+            input:valid ~ .label1 {
+                top: 7.2%;
+                left: 9%;
+            }
+            .savea2{
+                left: 26%;
+                top: 17% ;
+            }
+            .savea1{
+                left: 56%;
+                top: 17% ;
+            }
+            .savea3,.savea4
+            {
+                left: 70%;
+                margin-top: -10px;
+            }
+            .deeee{
+                visibility: visible;
+                top: -8%;
+                left: 26%;
+            }
+            .right
+            {
+                width: 183%;
+                position: absolute;
+                left: 0%;
+                border: none;
+            }
+            /* .main */
+            /* {
+                width: 201%;
+                height: 2100px;
+                background-image: url(image/Screenshot\ 2024-01-09\ 164953.png); */
+                /* filter: blur(10px); */
+                /* backdrop-filter: opacity(.2);
+            } */
+        }
+        .mainaa img
+        {
+            width: 100%;
+            height: 100%;
+            filter: blur(10px);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            /* opacity: .9; */
+            /* background-color: black; */
+        }
+    </style>
+</head>
+<body>
+    <div class="mainaa">
+        <img src="image/Screenshot 2024-01-09 164953.png" alt="" loading="lazy">
+    </div>
+    <div class="main">
+        <div class="right">
+            <form action="download" id="ff1">
+        
+                <div class="form">
+                    <div class="left1">
+                        <div class="img"></div>
+                        <h2 class="con">
+                            <ul><li>CONTACT</li>
+                            <span class="c1" id="cona1">&emsp;&emsp13;<data></data></span><br>
+                            <span class="c2" id="cona2">&emsp;&emsp13;<data></data></span><br>
+                            <span class="c3" id="cona3">&emsp;&emsp13;<data></data></span>
+                            
+                        </h2>
+                        <h2 class="carr">
+                            <ul><li>CAREER OBJECTIVE</li>
+                            <p class="ca1" id="cona4"></p>
+                        </h2>
+                        <h2 class="lan">
+                            <ul><li>LANGUAGE</li>
+                            <span class="l1" id="cona5"></span><br>
+                            <span class="l2" id="cona6"></span><br>
+                            <span class="l3" id="cona7"></span><br>  
+                        </h2>
+                        <h2 class="skill">
+                            <ul><li>SKILL</li>
+                            <span class="sk1">1.Team work</span><br>
+                            <span class="sk2">2.Open minded</span><br>
+                            <span class="sk3">3.Coding</span><br>
+                            <span class="sk4">4.Video edition</span><br>
+                        </h2>
+                        <h2 class="int">
+                            <ul><li>INTEREST</li>
+                            <span class="in1">1.Meditation</span><br>
+                            <span class="in2">2.Playing cricket</span><br>
+                            <span class="in3">3.Visiting</span><br>
+                            <span class="in4">4.Reading books</span><br>
+                        </h2>
+                    </div>
+                    <div class="right1">
+                        <span class="name">Ritik Shukla</span><br>
+                        <!-- <span class="prof">Student</span> -->
+                        <div class="edu">
+                            EDUCATION
+                        </div>
+                        <div class="inter">
+                            HIGH SCHOOL DETAILS
+                            <ul>
+                                <li class="ll1">Science streme</li>
+                                <li class="ll1">SVP college 2019</li>
+                                <li class="ll1">3rd position in school</li>
+                                <li class="ll1">Class cordinator</li>
+                            </ul>
+                        </div>
+                        <div class="college">
+                            COLLEGE DETAILS
+                            <ul>
+                                <li class="gd1">Bachelor of Computer Applications</li>
+                                <li class="gd1">United instuate of management</li>
+                                <li class="gd1">Captain of web development</li>
+                                <li class="gd1">Winner of inter club compatation</li>
+                            </ul>
+                        </div>
+                        <div class="job">
+                            INTERNSHIP AND TRANING
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="tr1">Internship & Job Preparation by Internshala</li>
+                                <li class="tr1">Complete netcamp summer internship </li>
+                                <li class="tr1">Club Captain of Web Development</li>
+                                <li class="tr1">Winner of inter club compatation</li>
+                            </ul>
+                        </div>
+                        <div class="ach">
+                            ACHIEVEMENTS
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="acc1">Get third rank in 10th in our school</li>
+                                <li class="acc1">Get 5th rank in 12th in our school</li>
+                                <li class="acc1">Winner of Inter club compatition in college</li>
+                                <li class="acc1">top performer of certification course in our college</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div></form>
+                <button id="down" onclick="downloadPDF()">Download</button>
+        </div>
+        <div class="left">
+           <h1 class="deeee">Enter your details</h1>
+            <ol>
+                <li style="font-size: 24px;"><h2 class="con2">Enter contact details</h2></li>
+            
+            <div class="text-field">
+                <input type="text" class="det2"  id="conb1" required>
+                <label class="label1">Enter name</label>
+                <span>
+                <input type="text" class="det3"  id="conb2" required>
+                <label class="label3">Enter email</label>
+                </span>
+                <span>
+                <input type="text" class="det4"  id="conb3" required>
+                <label class="label4">Enter city </label>
+                </span>
+                <button class="savea1" onclick="savea1()">Save Details</button>
+                <button class="savea2" onclick="savea2()">Clear Details</button>
+            </div>
+           
+
+
+                <li class="con3"><h2 class="zz">Enter career objective</h2></li>
+                <textarea name="text "cols="" rows="" class="con4" id="conb4" maxlength="260"></textarea>
+                <button class="savea3" onclick="savea3()">Save Details</button><br>
+                <button class="savea4" onclick="savea4()">Clear Details</button>
+
+                <li class="con5">Choose Language </li><p class="con6">(Upto 3 languages)</p>
+                <div class="con7">
+                    <select class="ll5" id="conb5" required >
+                        <option value="" >Choose 1st language</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="French">French</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="Russian">Russian</option>
+                    </select>
+                    <select class="ll6"id="conb6" required>
+                        <option value="">Choose 2nd language</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="French">French</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="Russian">Russian</option>
+                    </select>
+                    <select class="ll7"id="conb7" required>
+                        <option value="">Choose 3rd language</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="French">French</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="Russian">Russian</option>
+                    </select>
+                    <br>
+                    <button class="ssss1" onclick="save5()">Save details</button>
+                    <button class="ssss2" onclick="save6()">Clear details</button>
+                    <!-- <input type="checkbox" name="" id="ll5" width="100px" height="30px"> -->
+                </div>
+            </ol>
+        </div>
+    </div>
+    <style>
+    </style>
+    <script>
+        function savea1()
+        {
+            var r1 = document.getElementById("conb1").value;
+            var r2 = document.getElementById("conb2").value;
+            var r3 = document.getElementById("conb3").value;
+        if(r1!=""&&r2!=""&&r3!="")
+        {
+            document.getElementById("cona1").innerHTML+=document.getElementById("conb1").value;
+            document.getElementById("cona2").innerHTML+=document.getElementById("conb2").value;
+            document.getElementById("cona3").innerHTML+=document.getElementById("conb3").value;
+        }
+        else
+        {
+            alert("Plese fill given (name,email and city) the information first");
+        }
+        }
+        function savea2()
+        {
+            document.getElementById("conb1").value="";   
+            document.getElementById("conb2").value="";   
+            document.getElementById("conb3").value=""; 
+            document.getElementById("cona1").innerHTML="";   
+            document.getElementById("cona2").innerHTML="";   
+            document.getElementById("cona3").innerHTML="";   
+        }
+        function savea3()
+        {
+            document.getElementById("cona4").innerHTML+=document.getElementById("conb4").value;
+        }
+        function savea4()
+        {
+            document.getElementById("cona4").innerHTML=""; 
+            document.getElementById("conb4").value="";   
+
+            
+        }
+        function save5()
+        {
+            let i=1;
+            document.getElementById("cona5").innerHTML+="1."+document.getElementById("conb5").value;
+            document.getElementById("cona6").innerHTML+="2."+document.getElementById("conb6").value;
+            document.getElementById("cona7").innerHTML+="3."+document.getElementById("conb7").value;
+        }
+        function save6()
+        {
+            document.getElementById("conb5").value="";   
+            document.getElementById("conb6").value="";   
+            document.getElementById("conb7").value=""; 
+            document.getElementById("cona5").innerHTML="";   
+            document.getElementById("cona6").innerHTML="";   
+            document.getElementById("cona7").innerHTML="";
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/v4-shims.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+        var docPDF = new jsPDF();
+        function downloadPDF(invoiceNo){
+
+            var elementHTML = document.getElementById("ff1");
+            
+            docPDF.html(elementHTML, {
+            callback: function(docPDF) {
+            docPDF.save(invoiceNo+'.pdf');
+            },
+            x: 0,
+            y: 0,
+            width: 170,
+            windowWidth: 650
+        });
+    }
+</script>
+
+<!-- 
+<div class="img"></div>
+<h2 class="con">
+    <ul><li>CONTACT</li></ul>
+    <span class="c1">&emsp;<i class="fa-solid fa-phone" style="color: rgb(0, 255, 68);"></i>&emsp13;8102458163</span><br>
+    <span class="c2">&emsp;<i class="fa-solid fa-envelope">&emsp13;<data>Abhay123@gmail.com</data></i></span><br>
+    <span class="c3">&emsp;<i class="fa-solid fa-location-dot">&emsp13;<data>Prayagraj,Rajapur</data></i></span>
+</h2>
+<h2 class="carr">
+    <ul><li>CAREER OBJECTIVE</li></ul>
+    <p class="ca1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis officia sunt, quibusdam adipisci reprehenderit vel temporibus, autem omnis atque error aliquid modi necessitatibus aspernatur voluptas! Impedit quaerat et alias modi.</p>
+</h2>
+<h2 class="lan">
+    <ul><li>LANGUAGE</li></ul>
+    <span class="l1">1.English</span><br>
+    <span class="l2">2.Hindi</span><br>
+    <span class="l3">3.France</span><br>  
+</h2>
+<h2 class="skill">
+    <ul><li>SKILL</li></ul>
+    <span class="sk1">1.Team work</span><br>
+    <span class="sk2">2.Open minded</span><br>
+    <span class="sk3">3.Coding</span><br>
+    <span class="sk4">4.Video edition</span><br>
+</h2>
+<h2 class="int">
+    <ul><li>INTEREST</li></ul>
+    <span class="in1">1.Meditation</span><br>
+    <span class="in2">2.Playing cricket</span><br>
+    <span class="in3">3.Visiting</span><br>
+    <span class="in4">4.Reading books</span><br>
+</h2> -->
+</body>
+</html>

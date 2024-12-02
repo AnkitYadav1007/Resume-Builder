@@ -1,0 +1,253 @@
+<script>
+    var xm1 = document.getElementById("saveData");
+    let btn = document.getElementById("addmore");
+    let abx = 0;
+    let abx1 = 0;
+    var count = 1;
+    var c1=0;
+    btn.addEventListener("click",function()
+{
+    if(abx1<=1)
+    {
+        var container = document.getElementById("container");
+    var section = document.getElementById("mainsection");
+    container.appendChild(section.cloneNode(true));
+    abx++;
+    c1++
+    abx1++;
+    // var mnopq = document.getElementById("saveData1");
+    // if(count == 1)
+    // {
+    //     mnopq.id="div1";
+    // }
+    // else if(count==2)
+    // {
+    //     mnopq.id="div2";
+    // }
+    // else if(count==3)
+    // {
+    //     console.log("hello")
+    // }
+    // count++;
+    section.style.transition=".5s all linear" ; 
+    setTimeout(() => {
+    }, 200)
+    // section.style.marginTop="10px";        
+    }
+    else
+    {
+        alert("You can add upto three Languages Only.")
+    }
+    
+})
+    let containerData = document.getElementById("container");
+    containerData.addEventListener('click', function (event){
+    if(event.target.tagName == "BUTTON"){
+        let x1,x2,x3,x4,x5;
+    let inp = event.target.previousElementSibling;
+    // let data = inp.value;
+    //     localStorage.setItem("saveddata", data)
+    // alert(inp.value);
+        // if()
+        // alert(x)
+        // if(count==1)
+        // {
+        //     x1=data
+        //     var x11 = document.getElementById("lan1").value;
+        //     x11.innerHTML=x1;
+        //     x11.id="heyy"
+        //     var l = document.getElementById("heyy").value="Hello"
+        //     alert(l)
+
+        // }
+        // else if(count==2)
+        // {
+        //     x2=data
+        //     document.getElementById("lan2").innerHTML=x2;
+
+        // }
+        // else if(count==3)
+        // {
+        //     x3=data
+        //     document.getElementById("lan3").innerHTML=x3;
+        // }
+        // else if(count==4)
+        // {
+        //     x4=data
+        //     document.getElementById("lan4").innerHTML=x4;
+        // }
+        // else if(count==5)
+        // {
+        //     x5=data
+        //     document.getElementById("lan5").innerHTML=x5;
+        // }
+        // else
+        // {
+
+        // }
+        
+    }
+
+    else  if(event.target.className=="addmore"){
+       let index1=  Array.from(document.getElementsByClassName("clonedSection")).indexOf(event.target.parentElement.parent)
+        let index = event.target.getAttribute("index1");
+        let savedata=localStorage.getItem("saveddata");
+        event.target.previousElementSibling.value=savedata;
+    }
+    });
+// skill
+    let ill = 0;
+    let btn1 = document.getElementById("addmore1");
+    btn1.addEventListener("click",function()
+{
+    if(ill<=3)
+    {
+        var la = document.getElementById("inp101")
+    var container1 = document.getElementById("container1");
+    var section1 = document.getElementById("mainsection1");
+    container1.appendChild(section1.cloneNode(true)); 
+    section1.style.transition=".5s all linear" ; 
+    setTimeout(() => {
+        // section1.removeAttribute('id');
+        // section1.setAttribute('class', 'clonedSection')
+    }, 200) 
+    // section1.style.marginTop="10px"
+    ill++;
+    }
+    else
+    {
+        alert("You can add upto five Skills Only.")
+    }
+})
+    let containerData1 = document.getElementById("container1");
+    containerData1.addEventListener('click', function (event){
+    if(event.target.tagName == "BUTTON"){
+    let inp1 = event.target.previousElementSibling;
+    let data1 = inp1.value;
+    alert(data1);
+    // document.getElementsById("saveData").disabled = true;
+    }
+})
+
+//Achivements
+let btn2 = document.getElementById("addmore2");
+
+    var xx1 = 0;
+    btn2.addEventListener("click",function()
+{
+    if(xx1<=3)
+    {
+        var la = document.getElementById("inp102")
+    var container2 = document.getElementById("container2");
+    var section2 = document.getElementById("mainsection2");
+    container2.appendChild(section2.cloneNode(true)); 
+    section2.style.transition=".5s all linear" ; 
+    setTimeout(() => {
+        // section2.removeAttribute('id');
+        // section2.setAttribute('class', 'clonedSection')
+    }, 200) 
+    // section2.style.marginTop="10px";
+    xx1++;
+    }
+    else
+    {
+        alert("You can add upto five Achievements Only.")
+    }
+})
+    let containerData2 = document.getElementById("container2");
+    containerData2.addEventListener('click', function (event){
+    if(event.target.tagName == "BUTTON"){
+    let inp1 = event.target.previousElementSibling;
+    let data1 = inp1.value;
+    alert(data1);
+    // document.getElementsById("saveData").disabled = true;
+    }
+})
+
+    function Delete(button) 
+{
+    
+    var m1 = confirm("Do you Want to Delete")
+    if(m1==true)
+    {
+    var parent = button.parentNode;
+    var grand_father = parent.parentNode;
+    grand_father.removeChild(parent);
+    count--;
+    abx--;
+    abx1--;
+    }
+    else
+    {
+        console.log(" ")
+    }
+}
+</script>
+var hx = 1;
+        var h = document.getElementById("addmorelan");
+        // h.addEventListener(("click") ,function()
+        function addlan()
+    {
+
+      if(hx==1||hx==2)
+    {
+        
+        var rr2 = document.getElementById("container333");
+        if(rr2.style.display=="none"&&hx==2){
+        rr2.style.transition="all ease  2s";
+        rr2.style.visibility="visible";
+        rr2.style.display="block";
+        }
+        var rr1 = document.getElementById("container222");
+        if(rr1.style.display=="none"&&hx==1)
+        {
+        rr1.style.transition="all ease  2s";
+        rr1.style.visibility="visible";
+        rr1.style.display="block";
+        hx+=2
+        }
+        else
+        {
+
+        }
+    }
+    else
+    {
+        alert("you can add upto threes languagrs only");
+    }    
+    hx--;
+}
+    function Deletelan1()
+    {
+        alert("you can not  delete this language as it is the first one.");
+    }
+    function Deletelan2()
+    {
+        var m1 = confirm("Do you Want to Delete")
+        if(m1==true)
+        {
+        let lan2 = document.getElementById("container222")
+        hx=1
+        lan2.style.visibility="hidden"
+        lan2.style.display="none"
+        }
+        else
+        {
+            console.log(" ")
+        }
+    }
+    function Deletelan3()
+    {
+        var m2 = confirm("Do you Want to Delete")
+        if(m2==true)
+        {
+        let lan3 = document.getElementById("container333")
+        hx=2
+        lan3.style.display="none"
+        lan3.style.visibility="hidden"
+        }
+        else
+        {
+            console.log(" ")
+        }
+    }
